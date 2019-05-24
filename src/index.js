@@ -1,6 +1,9 @@
-let number = 16;
-let colorChange = false;
-let globalColor = '#000000';
+let config = {
+  number: 16,
+  colorChange: false,
+  globalColor: '#000000',
+  pageTitle: 'Etch-a-Sketch'
+};
 
 let app,
   buttonClear,
@@ -13,7 +16,7 @@ let app,
   section,
   title;
 
-const colors = [
+let colors = [
   '#7DB32B',
   '#A41809',
   '#421AAE',
@@ -65,12 +68,12 @@ buttonClear.addEventListener('click', function() {
 });
 
 buttonColor.addEventListener('click', function() {
-  flip(colorChange);
+  flip(config.colorChange);
   pickColor();
 });
 
 buttonReset.addEventListener('click', function() {
-  number = prompt('How many squares do you want?', '16');
+  let number = prompt('How many squares do you want?', '16');
   createGrid(number);
 });
 
@@ -83,7 +86,7 @@ gridWrapper.addEventListener('mouseover', function(e) {
 function createHeader() {
   title = create('title', 'h1');
   title.classList.add('title');
-  title.innerText = 'Etch a Sketch';
+  title.innerText = config.pageTitle;
   section.appendChild(title);
   return;
 }
@@ -108,7 +111,7 @@ function pickColor() {
   let i = getRandomInt(colors.length);
   let color = colors[i];
   buttonColor.style.backgroundColor = color;
-  globalColor = color;
+  config.globalColor = color;
 }
 
 function flip(boolVariable) {
@@ -128,4 +131,4 @@ function create(variable, type) {
 }
 
 createHeader();
-createGrid(number);
+createGrid(config.number);
