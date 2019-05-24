@@ -1,3 +1,55 @@
 body {
   font-family: sans-serif;
 }
+
+.button-container {
+  display: flex;
+  align-content: center;
+  width: 300px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: navy;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  border-radius: 5px 5px 5px 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.title {
+  text-align: center;
+  font-size: 32pt;
+  font-weight: 300;
+}
+
+.wrapper {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-rows: repeat(16, 50px);
+  grid-template-columns: repeat(16, 50px);
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+  position: relative;
+}
+
+.grid {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
